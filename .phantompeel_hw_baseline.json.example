@@ -1,0 +1,13 @@
+{
+    "Disk": "EXAMPLE-SERIAL-1234",
+    "Volume_C": "ABCD-EFGH",
+    "Motherboard": "BASE-BOARD-EXAMPLE",
+    "BIOS": "00000000-0000-0000-0000-000000000000",
+    "CPU": "BFEBFBFF00012345",
+    "RAM": "RAM-BANK-EXAMPLE",
+    "GPU": "PCI\VEN_10DE&DEV_1C03&SUBSYS_1C0310DE&REV_A1",
+    "MAC": "AA:BB:CC:DD:EE:FF",
+    "MAC_Type": "Standard",
+    "SecureBoot": "Enabled",
+    "TestSigning": "Disabled"
+}

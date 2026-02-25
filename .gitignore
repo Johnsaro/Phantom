@@ -1,0 +1,7 @@
+.phantompeel_hw_baseline.json
+__pycache__/
+*.pyc
+phantom_report_*.json
+phantompeel_report_*.json
+venv/
+.env
