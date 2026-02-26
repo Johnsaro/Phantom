@@ -1,6 +1,6 @@
 # PhantomPeel — Driver & Spoofer Forensics Tool
 
-PhantomPeel is a specialized forensics utility designed to detect traces of Windows kernel drivers and spoofer artifacts (specifically targeting **infsoft / Infinite Spoofer**).
+PhantomPeel is a specialized forensics utility designed to detect traces of Windows kernel drivers and spoofer artifacts on Windows systems.
 
 ## ⚠️ Prerequisites
 
@@ -8,12 +8,24 @@ PhantomPeel is a specialized forensics utility designed to detect traces of Wind
 - **Python Version**: Python 3.8 or higher.
 - **Permissions**: **Must be run as Administrator** to access the Windows Registry and System32 directories.
 
+## 📦 Installation
+
+1. **Clone the repository**:
+   ```powershell
+   git clone https://github.com/YOUR_USERNAME/PhantomPeel.git
+   cd PhantomPeel
+   ```
+2. **Install dependencies**:
+   ```powershell
+   pip install pywin32
+   ```
+
 ## 🚀 How to Run
 
 1. **Open PowerShell or CMD as Administrator.**
 2. **Navigate to the script directory**:
    ```powershell
-   cd "C:\Users\saroj\OneDrive\Documents\projects\PhantomPeel"
+   cd "C:\path\to\PhantomPeel"
    ```
 3. **Execute the script**:
    ```powershell
@@ -25,8 +37,8 @@ PhantomPeel is a specialized forensics utility designed to detect traces of Wind
 | Feature | Description |
 | :--- | :--- |
 | **Driver Sweep** | Scans the Windows Registry for all kernel/FS drivers. Flags drivers in non-standard locations or those created since Jan 2025. |
-| **Artifact Hunt** | Searches for random-named folders, recent `.sys` drops, and known launcher filenames. Now specifically targets your identified spoofer folder. |
-| **Deep Forensics** | Analyzes MUICache, ShimCache, and Prefetch for execution traces. Now includes a check for the `HideMachine` registry bypass. |
+| **Artifact Hunt** | Searches for random-named folders, recent `.sys` drops, and known launcher filenames. |
+| **Deep Forensics** | Analyzes MUICache, ShimCache, and Prefetch for execution traces. Includes a check for the `HideMachine` registry bypass. |
 | **Security Posture** | Reports on **Secure Boot** status and **Test Signing** mode, which are often manipulated by spoofers. |
 | **Network Fingerprint** | Validates your MAC address against the **OUI (Organizationally Unique Identifier)** to detect randomly generated spoofed addresses. |
 | **HWID Integrity** | Displays and tracks your hardware serials (Disk, Motherboard, GPU, BIOS, RAM, MAC) against a "SAFE" baseline. |
@@ -36,7 +48,7 @@ PhantomPeel is a specialized forensics utility designed to detect traces of Wind
 ## 📊 Understanding the Output
 
 - **Red Flags [!]**: High-probability artifacts or unsigned kernel drivers.
-- **Yellow Flags [!]**: Suspicious items (e.g., files created since your spoofer installation in early 2025).
+- **Yellow Flags [!]**: Suspicious items (e.g., files or drivers created recently or outside standard system paths).
 - **Green [+]**: Clean scans or valid digital signatures.
 
 ## 📁 Output Location

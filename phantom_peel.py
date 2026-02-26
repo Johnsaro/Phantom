@@ -2,7 +2,6 @@
 """
 PHANTOMPEEL — Driver & Spoofer Forensics Tool
 Windows kernel driver enumeration + spoofer artifact hunter
-Target: infsoft / Infinite Spoofer (nfLauncher)
 """
 
 import os
@@ -267,8 +266,7 @@ SEARCH_DIRS = [
     os.environ.get('LOCALAPPDATA', ''),
     os.environ.get('APPDATA', ''),
     os.environ.get('TEMP', ''),
-    os.path.join(USERPROFILE, 'Downloads'),       # launcher lives here
-    os.path.join(USERPROFILE, 'Downloads', 'lztfWem0vcFAb'), # Specific Target
+    os.path.join(USERPROFILE, 'Downloads'),
     os.path.join(USERPROFILE, 'Desktop'),
     os.path.join(ONEDRIVE, 'Desktop'),            # OneDrive Desktop
     os.path.join(USERPROFILE, 'AppData', 'LocalLow'),
@@ -642,7 +640,7 @@ def spoofer_hunt():
     t = timer_start()
     scan_window = SCAN_FROM.strftime('%b %Y')
     print(f"  {dim(f'Hunting artifacts from {scan_window} onwards...')}")
-    print(f"  {dim('Target: infsoft / Infinite Spoofer — random folder pattern + nfLauncher')}\n")
+    print(f"  {dim('Hunting for random-named folders, recent .sys drops, and known launcher filenames...')}\n")
 
     # ── 2a. Recent .sys drops in System32\drivers ──────────────────────────
     spinner = ReconSpinner("Checking System32\\drivers for recent drops")
@@ -1071,8 +1069,7 @@ def draw_menu():
 
     status = green("ADMINISTRATOR") if is_admin() else red("NOT ADMIN  —  run as Admin for full access")
     print(f"  User     :  {status}")
-    print(f"  Scan From:  {yellow(SCAN_FROM.strftime('%b %d, %Y'))}  (spoofer install window)")
-    print(f"  Target   :  {dim('infsoft — Infinite Spoofer (nfLauncher.exe)')}\n")
+    print(f"  Scan From:  {yellow(SCAN_FROM.strftime('%b %d, %Y'))}\n")
     
     print(f"  {bold(yellow('[1]'))}  {bold('Driver Sweep')}           —  Enumerate & flag kernel drivers")
     print(f"  {bold(yellow('[2]'))}  {bold('Spoofer Artifact Hunt')}  —  Random folders, .sys drops, launcher files")
